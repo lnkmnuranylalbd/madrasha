@@ -8,12 +8,12 @@
     <style>.banner {
   position: relative;
   width: 100%;
-  max-height: 350px;
+  max-height: 250px; /* 350px থেকে কমাইলাম */
   overflow: hidden;
 }
 .banner img {
   width: 100%;
-  height: 350px;
+  height: 250px; /* এটাও 250px */
   object-fit: cover;
   display: block;
 }
@@ -22,15 +22,17 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(0,0,0,0.6);
-  color: white;
-  padding: 15px 30px;
+  background: rgba(0,0,0,0.5); /* একটু হালকা করলাম */
+  color: #ffffff; /* সাদা কালার */
+  padding: 12px 25px;
   border-radius: 8px;
   text-align: center;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8); /* লেখা ফুটবে */
 }
 .banner-text h1 {
   margin: 0;
-  font-size: 28px;
+  font-size: 24px; /* একটু ছোট করলাম */
+  line-height: 1.4;
 }
         body { font-family: Arial, sans-serif; text-align: center; padding: 20px; background-color: #f0f8ff; }
         h1 { color: #006400; }
