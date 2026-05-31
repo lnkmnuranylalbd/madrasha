@@ -34,11 +34,23 @@
             line-height: 1.6;
             margin: 0 0 20px 0;
             font-weight: bold;
-        }
-        .main-title .underline {
-            text-decoration: underline;
-            text-decoration-thickness: 3px;
-        }
+        .main-title { 
+    color: #006400; 
+    font-size: 28px; /* মোবাইলের জন্য একটু ছোট করলাম */
+    line-height: 1.5;
+    margin: 0 0 20px 0;
+    font-weight: bold;
+    white-space: nowrap; /* লাইন ভাঙ্গা বন্ধ করবে */
+}
+@media (max-width: 600px) {
+    .main-title {
+        font-size: 24px; /* ছোট মোবাইলে আরও ছোট */
+    }
+}
+.main-title .underline {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+}
 
         .notice { 
             background: #fff3cd; 
@@ -66,9 +78,9 @@
     </div>
 
     <h1 class="main-title">
-        লালমনিরহাট নেছারিয়া কামিল<br>
-        <span class="underline">মাদ্রাসা</span>
-    </h1>
+    লালমনিরহাট নেছারিয়া কামিল<br>
+    <span class="underline">মাদ্রাসা</span>
+</h1>
     
     <div class="notice">
         <h2>নোটিশ বোর্ড</h2>
