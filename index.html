@@ -27,49 +27,45 @@
             display: block;
         }
 
-        /* মাদ্রাসার নামের স্টাইল */
         .main-title { 
             color: #006400; 
-            font-size: 32px;
-            line-height: 1.6;
+            font-size: 28px;
+            line-height: 1.5;
             margin: 0 0 20px 0;
             font-weight: bold;
-        .main-title { 
-    color: #006400; 
-    font-size: 28px; /* মোবাইলের জন্য একটু ছোট করলাম */
-    line-height: 1.5;
-    margin: 0 0 20px 0;
-    font-weight: bold;
-    white-space: nowrap; /* লাইন ভাঙ্গা বন্ধ করবে */
-}
-@media (max-width: 600px) {
-    .main-title {
-        font-size: 24px; /* ছোট মোবাইলে আরও ছোট */
-    }
-}
-.main-title .underline {
-    text-decoration: underline;
-    text-decoration-thickness: 3px;
-}
+        }
+        .main-title .underline {
+            text-decoration: underline;
+            text-decoration-thickness: 3px;
+        }
 
         .notice { 
             background: #fff3cd; 
-            padding: 15px; 
+            padding: 20px; 
             border-radius: 10px; 
             margin: 20px 0; 
             text-align: left;
+            line-height: 1.8;
         }
+        .notice h2 {
+            text-align: center;
+            margin-top: 0;
+        }
+
         .btn { 
             display: inline-block; 
             padding: 15px 30px; 
             background: #006400; 
-            color: white; 
+            color: white !important; 
             text-decoration: none; 
             border-radius: 8px; 
             font-size: 18px; 
-            margin-top: 20px; 
+            margin-top: 20px;
+            font-weight: bold;
         }
-        .btn:hover { background: #004d00; }
+        .btn:hover { 
+            background: #004d00; 
+        }
     </style>
 </head>
 <body>
@@ -78,13 +74,13 @@
     </div>
 
     <h1 class="main-title">
-    লালমনিরহাট নেছারিয়া কামিল<br>
-    <span class="underline">মাদ্রাসা</span>
-</h1>
+        লালমনিরহাট নেছারিয়া কামিল<br>
+        <span class="underline">মাদ্রাসা</span>
+    </h1>
     
     <div class="notice">
         <h2>নোটিশ বোর্ড</h2>
-        <p>*নোটিশ* <br><br>
+        <p><strong>*নোটিশ*</strong> <br><br>
         সম্মানিত অভিভাবকবৃন্দের অবগতির জন্য জানানো যাচ্ছে যে, গ্রীষ্মকালীন অবকাশ ও পবিত্র ঈদ-উল-আযহা উপলক্ষে নুরাণী বিভাগে আগামী ২৫/০৫/২০২৬ইং তারিখ রোজ সোমবার হতে ০৭/০৬/২০২৬ইং তারিখ রোজ রবিবার পর্যন্ত মোট ১৪দিন মাদ্রাসা বন্ধ থাকবে। <br><br>
         উল্লেখ্য যে, আগামী ০৮/০৬/২০২৬ইং তারিখ রোজ সোমবার সকাল ৮:৩০ ঘটিকা সময় থেকে পাঠদান কার্যক্রম পুনরায় শুরু হবে ইনশাআল্লাহ। <br><br>
         আদেশক্রমে,<br>
