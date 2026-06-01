@@ -3,29 +3,171 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>সিলেবাস - নেছারিয়া কামিল মাদ্রাসা নুরানী শাখা</title>
+<title>সিলেবাস - নূরানী লালমনিরহাট</title>
 <style>
-body {font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f5f5f5;}
-.header {background: #2c5aa0; color: white; padding: 15px; text-align: center; border-radius: 8px;}
-.btn-box {max-width: 500px; margin: 40px auto; display: flex; flex-direction: column; gap: 20px;}
-.btn {background: #4CAF50; color: white; padding: 25px; text-align: center; font-size: 22px; 
-      border-radius: 8px; text-decoration: none; transition: 0.3s;}
-.btn:hover {background: #45a049;}
-.back {background: #888; font-size: 18px; padding: 15px;}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+h1 {
+    background-color: #006400;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+.dropdown-btn {
+    background-color: #228B22;
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 90%;
+    max-width: 400px;
+    margin: 10px auto;
+    display: block;
+}
+.dropdown-content,.sub-dropdown-content {
+    display: none;
+    background-color: #e0f2e0;
+    border-radius: 8px;
+    padding: 10px;
+    width: 85%;
+    max-width: 380px;
+    margin: 5px auto;
+}
+.dropdown-content a,.sub-dropdown-content a {
+    color: #006400;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    border-bottom: 1px solid #c8e6c9;
+}
+.dropdown-content a:last-child,.sub-dropdown-content a:last-child {
+    border-bottom: none;
+}
+.dropdown-content a:hover,.sub-dropdown-content a:hover {
+    background-color: #c8e6c9;
+}
+.show {display: block;}
+.back-btn {
+    background-color: #666;
+    color: white;
+    padding: 14px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 90%;
+    max-width: 400px;
+    margin: 25px auto;
+    display: block;
+    text-decoration: none;
+}
+.class-title {
+    color: #006400;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
 </style>
 </head>
 <body>
-<div class="header">
-    <h1>সিলেবাস</h1>
+
+<h1>📚 সিলেবাস</h1>
+
+<button onclick="toggleDropdown('classDropdown')" class="dropdown-btn">শ্রেণী নির্বাচন করুন ▼</button>
+
+<div id="classDropdown" class="dropdown-content">
+
+  <div class="class-title">👶 শিশু শ্রেণী</div>
+  <button onclick="toggleDropdown('shishuSyllabus')" class="dropdown-btn" style="background-color:#32CD32; font-size:16px;">বিষয় দেখুন</button>
+  <div id="shishuSyllabus" class="sub-dropdown-content">
+    <a href="syllabus-shishu-bangla.html">বাংলা</a>
+    <a href="syllabus-shishu-english.html">ইংরেজি</a>
+    <a href="syllabus-shishu-math.html">গণিত</a>
+    <a href="syllabus-shishu-arabi.html">আরবি লেখা</a>
+    <a href="syllabus-shishu-kalima.html">কালিমা ও মাসায়েল</a>
+    <a href="syllabus-shishu-hadis.html">হাদীস শরীফ</a>
+  </div>
+
+  <div class="class-title">👦 প্রথম শ্রেণী</div>
+  <button onclick="toggleDropdown('class1Syllabus')" class="dropdown-btn" style="background-color:#32CD32; font-size:16px;">বিষয় দেখুন</button>
+  <div id="class1Syllabus" class="sub-dropdown-content">
+    <a href="syllabus-class1-bangla.html">বাংলা</a>
+    <a href="syllabus-class1-english.html">ইংরেজি</a>
+    <a href="syllabus-class1-math.html">গণিত</a>
+    <a href="syllabus-class1-quran.html">কোরআন মাজীদ ও তাজবীদ</a>
+    <a href="syllabus-class1-kalima.html">কালিমা ও মাসায়েল</a>
+    <a href="syllabus-class1-hadis.html">হাদিস শরীফ</a>
+    <a href="syllabus-class1-arabi.html">আরবি লেখা</a>
+    <a href="syllabus-class1-darus.html">আদ্ দরুসুল আরাবিয়্যাহ</a>
+  </div>
+
+  <div class="class-title">👦 দ্বিতীয় শ্রেণী</div>
+  <button onclick="toggleDropdown('class2Syllabus')" class="dropdown-btn" style="background-color:#32CD32; font-size:16px;">বিষয় দেখুন</button>
+  <div id="class2Syllabus" class="sub-dropdown-content">
+    <a href="syllabus-class2-quran.html">কোরআন মাজীদ ও তাজবীদ</a>
+    <a href="syllabus-class2-kalima.html">কালিমা ও মাসায়েল</a>
+    <a href="syllabus-class2-hadis.html">হাদিস শরীফ ও আসমাউল হুসনা</a>
+    <a href="syllabus-class2-doa.html">আদঃ মাসনুনাহ ও আদঃ সলাত</a>
+    <a href="syllabus-class2-arabi.html">আরবি লেখা</a>
+    <a href="syllabus-class2-geo.html">ভূগোল সমাজ</a>
+    <a href="syllabus-class2-bangla.html">বাংলা</a>
+    <a href="syllabus-class2-english.html">ইংরেজি</a>
+    <a href="syllabus-class2-math.html">গণিত</a>
+    <a href="syllabus-class2-darus.html">আদুরুসুল আরাবিয়্যাহ</a>
+  </div>
+
+  <div class="class-title">👦 তৃতীয় শ্রেণী</div>
+  <button onclick="toggleDropdown('class3Syllabus')" class="dropdown-btn" style="background-color:#32CD32; font-size:16px;">বিষয় দেখুন</button>
+  <div id="class3Syllabus" class="sub-dropdown-content">
+    <a href="syllabus-class3-quran.html">কোরআন মাজীদ ও তাজবীদ</a>
+    <a href="syllabus-class3-kalima.html">কালিমা ও মাসায়েল</a>
+    <a href="syllabus-class3-hadis.html">হাদিস শরীফ ও আসমাউল হুসনা</a>
+    <a href="syllabus-class3-doa.html">আদঃ মাসনুনাহ ও আদঃ সলাত</a>
+    <a href="syllabus-class3-arabi.html">আরবি লেখা</a>
+    <a href="syllabus-class3-geo.html">ভূগোল সমাজ</a>
+    <a href="syllabus-class3-bangla.html">বাংলা</a>
+    <a href="syllabus-class3-english.html">ইংরেজি</a>
+    <a href="syllabus-class3-math.html">গণিত</a>
+    <a href="syllabus-class3-islam.html">ইসলাম শিক্ষা</a>
+  </div>
+
 </div>
 
-<div class="btn-box">
-    <a href="#" class="btn">📖 শিশু শ্রেণী</a>
-    <a href="#" class="btn">📖 প্রথম শ্রেণি</a>
-    <a href="#" class="btn">📖 দ্বিতীয় শ্রেণী</a>
-    <a href="#" class="btn">📖 তৃতীয় শ্রেণি</a>
-    <a href="index.html" class="btn back">← হোমে ফেরত</a>
-</div>
+<a href="menu.html" class="back-btn">← হোমে ফেরত</a>
+
+<script>
+function toggleDropdown(id) {
+  document.getElementById(id).classList.toggle("show");
+}
+window.onclick = function(event) {
+  if (!event.target.matches('.dropdown-btn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var subdropdowns = document.getElementsByClassName("sub-dropdown-content");
+    for (var i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+    for (var i = 0; i < subdropdowns.length; i++) {
+      var openSub = subdropdowns[i];
+      if (openSub.classList.contains('show')) {
+        openSub.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
 
 </body>
 </html>
