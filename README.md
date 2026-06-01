@@ -1,2 +1,2 @@
-# lalmonirhat-nesaria-kamil-madrasha
+# madrasha
 লালমনিরহাট নেছারিয়া কামিল মাদ্রাসা নূরানী ওয়েবসাইট
