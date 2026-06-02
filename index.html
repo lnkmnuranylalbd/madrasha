@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
@@ -6,28 +6,29 @@
 <title>লালমনিরহাট নেছারিয়া কামিল মাদ্রাসা নুরানী শাখা</title>
 <style>
 body {font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f0f8ff;}
-/* হেডার */
+/* মেনু বার সবার উপরে */
 .topbar {
     background: #2c5aa0;
     color: white;
-    padding: 15px;
+    padding: 12px 15px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
-.topbar h1 {
-    font-size: 18px;
-    margin: 0;
-    text-align: center;
-    flex: 1;
-}
-/* হ্যামবার্গার বাটন */
 .menu-btn {
-    font-size: 28px;
+    font-size: 26px;
     background: none;
     border: none;
     color: white;
     cursor: pointer;
+    margin-right: 15px;
+}
+.topbar h1 {
+    font-size: 15px;
+    margin: 0;
+    flex: 1;
 }
 /* সাইড মেনু */
 .sidemenu {
@@ -45,13 +46,10 @@ body {font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f0f8ff
 .sidemenu a {
     padding: 15px 20px;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 17px;
     color: #333;
     display: block;
     border-bottom: 1px solid #eee;
-}
-.sidemenu a:hover {
-    background: #e0f0ff;
 }
 .sidemenu .closebtn {
     font-size: 30px;
@@ -59,40 +57,76 @@ body {font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f0f8ff
     padding: 10px 20px;
     border-bottom: none;
 }
-/* মূল কনটেন্ট */
-.content {
-    padding: 30px 20px;
+/* নোটিশ লাইন ব্যানারের উপরে */
+.notice {
+    background: #fff3cd;
+    color: #856404;
+    padding: 12px;
     text-align: center;
+    font-size: 14px;
+    border-bottom: 1px solid #ffeeba;
 }
-.content h2 {
+/* ব্যানার মাঝখানে, হাইট কম */
+.banner {
+    text-align: center;
+    padding: 10px;
+}
+.banner img {
+    max-width: 100%;
+    height: 140px; /* হাইট কমানো */
+    object-fit: cover;
+    border-radius: 8px;
+}
+/* আমাদের পরিচিতি */
+.intro {
+    padding: 20px;
+    text-align: left;
+}
+.intro h2 {
     color: #2c5aa0;
-    margin-bottom: 20px;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.intro p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
 }
 </style>
 </head>
 <body>
 
-<!-- উপরের হেডার -->
+<!-- ১. মেনু সবার উপরে -->
 <div class="topbar">
     <button class="menu-btn" onclick="openMenu()">☰</button>
-    <h1>নেছারিয়া কামিল মাদ্রাসা</h1>
+    <h1>লালমনিরহাট নেছারিয়া কামিল মাদ্রাসা</h1>
+</div>
+
+<!-- ২. নোটিশ লাইন -->
+<div class="notice">
+    📢 নোটিশ: ২৫/০৫/২০২৬ থেকে ০৭/০৬/২০২৬ পর্যন্ত গ্রীষ্মকালীন অবকাশ
+</div>
+
+<!-- ৩. ব্যানার মাঝখানে -->
+<div class="banner">
+    <img src="banner.jpg" alt="মাদ্রাসা ব্যানার">
+</div>
+
+<!-- ৪. আমাদের পরিচিতি আগের মতো নিচে -->
+<div class="intro">
+    <h2>আমাদের পরিচিতি</h2>
+    <p>লালমনিরহাটের একটি ঐতিহ্যবাহী কামিল মাদ্রাসা। এখানে নুরানী থেকে কামিল পর্যন্ত পড়াশোনা হয়।</p>
 </div>
 
 <!-- সাইড মেনু -->
 <div id="mySidemenu" class="sidemenu">
     <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">×</a>
-    <a href="lesson.html">📖 পাঠ পরামর্শ</a>
+    <a href="advice.html">📖 পাঠ পরামর্শ</a>
     <a href="syllabus.html">📚 সিলেবাস</a>
     <a href="routine.html">📅 রুটিন</a>
     <a href="exam.html">📝 ফলাফল</a>
     <a href="admission.html">🎓 ভর্তি</a>
     <a href="info.html">ℹ️ তথ্য</a>
-</div>
-
-<!-- মূল কনটেন্ট -->
-<div class="content">
-    <h2>স্বাগতম</h2>
-    <p>উপরে বাম পাশের ☰ মেনু চাপলে সব অপশন পাবেন।</p>
 </div>
 
 <script>
