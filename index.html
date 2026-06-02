@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="bn">
 <head>
@@ -18,7 +17,7 @@
             width: 100%;
             max-height: 250px;
             overflow: hidden;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
         }
         .banner img {
             width: 100%;
@@ -27,27 +26,48 @@
             display: block;
         }
 
+        /* ব্যানারের সমান লম্বা এক লাইনের টাইটেল */
         .main-title { 
             color: #006400; 
-            font-size: 28px;
-            line-height: 1.5;
-            margin: 0 0 20px 0;
+            font-size: clamp(20px, 4vw, 38px);
             font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin: 10px 0 5px 0;
+            padding: 0 10px;
         }
         .main-title .underline {
             text-decoration: underline;
             text-decoration-thickness: 3px;
+            text-underline-offset: 4px;
         }
 
-        .notice { 
+        /* স্ক্রলিং নোটিশ */
+        .notice-ticker {
+            background: #fff3cd;
+            padding: 12px 0;
+            border-radius: 8px;
+            margin: 15px 0;
+            cursor: pointer;
+        }
+        .notice-ticker marquee {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* পুরো নোটিশ হিডেন, ক্লিকে দেখাবে */
+        .notice-full {
+            display: none;
             background: #fff3cd; 
             padding: 20px; 
             border-radius: 10px; 
-            margin: 20px 0; 
+            margin: 10px 0 20px 0; 
             text-align: left;
             line-height: 1.8;
         }
-        .notice h2 {
+        .notice-full h2 {
             text-align: center;
             margin-top: 0;
         }
@@ -60,11 +80,25 @@
             text-decoration: none; 
             border-radius: 8px; 
             font-size: 18px; 
-            margin-top: 20px;
+            margin-top: 10px;
             font-weight: bold;
         }
         .btn:hover { 
             background: #004d00; 
+        }
+
+        .intro {
+            margin: 25px 0;
+            text-align: left;
+            padding: 0 10px;
+        }
+
+        /* ল্যাপটপে বড় দেখানোর জন্য */
+        @media (min-width: 768px) {
+            body {
+                max-width: 900px;
+                margin: 0 auto;
+            }
         }
     </style>
 </head>
@@ -74,11 +108,17 @@
     </div>
 
     <h1 class="main-title">
-        লালমনিরহাট নেছারিয়া কামিল<br>
-        <span class="underline">মাদ্রাসা</span>
+        লালমনিরহাট নেছারিয়া কামিল মাদ্রাসা
     </h1>
     
-    <div class="notice">
+    <!-- ক্লিক করলে পুরো নোটিশ দেখাবে -->
+    <div class="notice-ticker" onclick="document.getElementById('fullNotice').style.display='block'; this.style.display='none';">
+        <marquee behavior="scroll" direction="left">
+            📢 নোটিশ: ২৫/০৫/২০২৬ থেকে ০৭/০৬/২০২৬ পর্যন্ত গ্রীষ্মকালীন অবকাশ ও ঈদ-উল-আযহা উপলক্ষে মাদ্রাসা বন্ধ থাকবে। ক্লিক করে বিস্তারিত দেখুন...
+        </marquee>
+    </div>
+
+    <div class="notice-full" id="fullNotice">
         <h2>নোটিশ বোর্ড</h2>
         <p><strong>*নোটিশ*</strong> <br><br>
         সম্মানিত অভিভাবকবৃন্দের অবগতির জন্য জানানো যাচ্ছে যে, গ্রীষ্মকালীন অবকাশ ও পবিত্র ঈদ-উল-আযহা উপলক্ষে নুরাণী বিভাগে আগামী ২৫/০৫/২০২৬ইং তারিখ রোজ সোমবার হতে ০৭/০৬/২০২৬ইং তারিখ রোজ রবিবার পর্যন্ত মোট ১৪দিন মাদ্রাসা বন্ধ থাকবে। <br><br>
@@ -95,5 +135,6 @@
     </div>
     
     <a href="menu.html" class="btn">হোম</a>
+
 </body>
 </html>
