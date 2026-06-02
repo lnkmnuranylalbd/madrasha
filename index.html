@@ -20,12 +20,12 @@ body {font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f0f8ff
     font-size: 26px;
     background: none;
     border: none;
-    color: white;
+    color: #ffffff !important; /* জোর করে সাদা */
     cursor: pointer;
     margin-right: 15px;
 }
 .topbar h1 {
-    font-size: 17px; /* নাম বড় করলাম */
+    font-size: 17px;
     margin: 0;
     flex: 1;
 }
@@ -55,13 +55,23 @@ body {font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f0f8ff
     padding: 10px 20px;
     border-bottom: none;
 }
-.notice {
+/* নোটিশ স্ক্রল */
+.notice-wrapper {
     background: #fff3cd;
-    color: #856404;
-    padding: 12px;
-    text-align: center;
-    font-size: 14px;
     border-bottom: 1px solid #ffeeba;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.notice {
+    display: inline-block;
+    padding: 12px;
+    color: #856404;
+    font-size: 14px;
+    animation: scroll-left 25s linear infinite;
+}
+@keyframes scroll-left {
+    from {transform: translateX(100%);}
+    to {transform: translateX(-100%);}
 }
 .banner {
     text-align: center;
@@ -69,13 +79,13 @@ body {font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f0f8ff
 }
 .banner img {
     max-width: 100%;
-    height: 150px; /* একটু বাড়ালাম */
-    object-fit: contain; /* কাটবে না, পুরা ছবি দেখাবে */
+    height: 150px;
+    object-fit: contain;
     border-radius: 8px;
 }
 .intro {
     padding: 20px;
-    text-align: center; /* মাঝখানে করলাম */
+    text-align: center;
 }
 .intro h2 {
     color: #2c5aa0;
@@ -96,19 +106,14 @@ body {font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f0f8ff
     <h1>লালমনিরহাট নেছারিয়া কামিল মাদ্রাসা</h1>
 </div>
 
-<div class="notice">
-    📢 নোটিশ: সম্মানিত অভিভাবকবৃন্দের অবগতির জন্য জানানো যাচ্ছে যে, গ্রীষ্মকালীন অবকাশ ও পবিত্র ঈদ-উল-আযহা উপলক্ষে নুরাণী বিভাগে আগামী ২৫/০৫/২০২৬ইং তারিখ রোজ সোমবার হতে ০৭/০৬/২০২৬ইং তারিখ রোজ রবিবার পর্যন্ত মোট ১৪দিন মাদ্রাসা বন্ধ থাকবে।
-
-উল্লেখ্য যে, আগামী ০৮/০৬/২০২৬ইং তারিখ রোজ সোমবার সকাল ৮:৩০ ঘটিকা সময় থেকে পাঠদান কার্যক্রম পুনরায় শুরু হবে ইনশাআল্লাহ।
-
-আদেশক্রমে,
-অধ্যক্ষ (ভারপ্রাপ্ত)
-মাওলানা মো: রফিকুল ইসলাম
-লালমনিরহাট নেছারিয়া কামিল মাদ্রাসা।
+<div class="notice-wrapper">
+    <div class="notice">
+        📢 নোটিশ: সম্মানিত অভিভাবকবৃন্দের অবগতির জন্য জানানো যাচ্ছে যে, গ্রীষ্মকালীন অবকাশ ও পবিত্র ঈদ-উল-আযহা উপলক্ষে নুরাণী বিভাগে আগামী ২৫/০৫/২০২৬ইং তারিখ রোজ সোমবার হতে ০৭/০৬/২০২৬ইং তারিখ রোজ রবিবার পর্যন্ত মোট ১৪দিন মাদ্রাসা বন্ধ থাকবে। উল্লেখ্য যে, আগামী ০৮/০৬/২০২৬ইং তারিখ রোজ সোমবার সকাল ৮:৩০ ঘটিকা সময় থেকে পাঠদান কার্যক্রম পুনরায় শুরু হবে ইনশাআল্লাহ। আদেশক্রমে, অধ্যক্ষ (ভারপ্রাপ্ত) মাওলানা মো: রফিকুল ইসলাম লালমনিরহাট নেছারিয়া কামিল মাদ্রাসা।
+    </div>
 </div>
 
 <div class="banner">
-    <img src="./madrasa-banner.jpg" alt="মাদ্রাসা ব্যানার"> <!-- ./ দিলাম -->
+    <img src="./madrasa-banner.jpg" alt="মাদ্রাসা ব্যানার">
 </div>
 
 <div class="intro">
