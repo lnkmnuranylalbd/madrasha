@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
@@ -6,7 +6,6 @@
 <title>লালমনিরহাট নেছারিয়া কামিল মাদ্রাসা নুরানী শাখা</title>
 <style>
 body {font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f0f8ff;}
-/* মেনু বার সবার উপরে */
 .topbar {
     background: #2c5aa0;
     color: white;
@@ -26,11 +25,10 @@ body {font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f0f8ff
     margin-right: 15px;
 }
 .topbar h1 {
-    font-size: 15px;
+    font-size: 17px; /* নাম বড় করলাম */
     margin: 0;
     flex: 1;
 }
-/* সাইড মেনু */
 .sidemenu {
     height: 100%;
     width: 0;
@@ -57,7 +55,6 @@ body {font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f0f8ff
     padding: 10px 20px;
     border-bottom: none;
 }
-/* নোটিশ লাইন ব্যানারের উপরে */
 .notice {
     background: #fff3cd;
     color: #856404;
@@ -66,21 +63,19 @@ body {font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f0f8ff
     font-size: 14px;
     border-bottom: 1px solid #ffeeba;
 }
-/* ব্যানার মাঝখানে, হাইট কম */
 .banner {
     text-align: center;
     padding: 10px;
 }
 .banner img {
     max-width: 100%;
-    height: 140px; /* হাইট কমানো */
-    object-fit: cover;
+    height: 150px; /* একটু বাড়ালাম */
+    object-fit: contain; /* কাটবে না, পুরা ছবি দেখাবে */
     border-radius: 8px;
 }
-/* আমাদের পরিচিতি */
 .intro {
     padding: 20px;
-    text-align: left;
+    text-align: center; /* মাঝখানে করলাম */
 }
 .intro h2 {
     color: #2c5aa0;
@@ -96,13 +91,11 @@ body {font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f0f8ff
 </head>
 <body>
 
-<!-- ১. মেনু সবার উপরে -->
 <div class="topbar">
     <button class="menu-btn" onclick="openMenu()">☰</button>
     <h1>লালমনিরহাট নেছারিয়া কামিল মাদ্রাসা</h1>
 </div>
 
-<!-- ২. নোটিশ লাইন -->
 <div class="notice">
     📢 নোটিশ: সম্মানিত অভিভাবকবৃন্দের অবগতির জন্য জানানো যাচ্ছে যে, গ্রীষ্মকালীন অবকাশ ও পবিত্র ঈদ-উল-আযহা উপলক্ষে নুরাণী বিভাগে আগামী ২৫/০৫/২০২৬ইং তারিখ রোজ সোমবার হতে ০৭/০৬/২০২৬ইং তারিখ রোজ রবিবার পর্যন্ত মোট ১৪দিন মাদ্রাসা বন্ধ থাকবে।
 
@@ -114,18 +107,15 @@ body {font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f0f8ff
 লালমনিরহাট নেছারিয়া কামিল মাদ্রাসা।
 </div>
 
-<!-- ৩. ব্যানার মাঝখানে -->
 <div class="banner">
-    <img src="madrasa-banner.jpg" alt="মাদ্রাসা ব্যানার">
+    <img src="./banner.jpg" alt="মাদ্রাসা ব্যানার"> <!-- ./ দিলাম -->
 </div>
 
-<!-- ৪. আমাদের পরিচিতি আগের মতো নিচে -->
 <div class="intro">
     <h2>আমাদের পরিচিতি</h2>
     <p>লালমনিরহাটের একটি ঐতিহ্যবাহী কামিল মাদ্রাসা। এখানে নুরানী থেকে কামিল পর্যন্ত পড়াশোনা হয়।</p>
 </div>
 
-<!-- সাইড মেনু -->
 <div id="mySidemenu" class="sidemenu">
     <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">×</a>
     <a href="advice.html">📖 পাঠ পরামর্শ</a>
