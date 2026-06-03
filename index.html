@@ -27,10 +27,12 @@ body {font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f0f8ff
 }
 .topbar h1 {
     font-family: 'Hind Siliguri', sans-serif;
-    font-size: 19px;
+    font-size: 22px;
     font-weight: 700;
     margin: 0;
     flex: 1;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
 }
 .sidemenu {
     height: 100%;
@@ -58,7 +60,7 @@ body {font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f0f8ff
     padding: 10px 20px;
     border-bottom: none;
 }
-/* নোটিশ লুপ স্ক্রল */
+/* নোটিশ লুপ স্ক্রল - স্পিড বাড়ালাম */
 .notice-wrapper {
     background: #fff3cd;
     border-bottom: 1px solid #ffeeba;
@@ -69,12 +71,12 @@ body {font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f0f8ff
 }
 .notice-track {
     display: flex;
-    animation: scroll-left 25s linear infinite;
+    animation: scroll-left 18s linear infinite; /* ৩০ থেকে ১৮ করলাম */
 }
 .notice {
     flex-shrink: 0;
     padding: 12px 50px;
-    color: #856404;
+    color: #5c3d00; /* গাঢ় করলাম */
     font-size: 15px;
     white-space: nowrap;
 }
@@ -94,10 +96,11 @@ body {font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f0f8ff
     z-index: 2000;
     padding: 20px;
     box-sizing: border-box;
+    overflow-y: auto;
 }
 .notice-content {
     background: #fff3cd;
-    color: #856404;
+    color: #5c3d00;
     padding: 20px;
     border-radius: 8px;
     max-width: 600px;
@@ -112,7 +115,7 @@ body {font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f0f8ff
     right: 15px;
     font-size: 28px;
     cursor: pointer;
-    color: #856404;
+    color: #5c3d00;
 }
 .banner {
     text-align: center;
@@ -120,13 +123,13 @@ body {font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f0f8ff
 }
 .banner img {
     max-width: 100%;
-    height: 150px;
-    object-fit: contain;
+    height: 120px; /* ১৫০ থেকে কমালাম */
+    object-fit: cover; /* contain থেকে cover করলাম */
     border-radius: 8px;
 }
 .intro {
     padding: 20px;
-    text-align: center; /* সেন্টার করলাম */
+    text-align: center;
 }
 .intro h2 {
     color: #2c5aa0;
@@ -167,7 +170,7 @@ body {font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f0f8ff
 </div>
 
 <div class="banner">
-    <img src="./banner.jpg" alt="মাদ্রাসা ব্যানার">
+    <img src="./images/banner.jpg" alt="মাদ্রাসা ব্যানার">
 </div>
 
 <div class="intro">
