@@ -96,8 +96,9 @@
       top: 100%;
       left: 0;
       width: 100%;
-      background: #2d5016;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      background: #e3f2fd;
+      padding: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
       z-index: 999;
     }
     
@@ -106,15 +107,25 @@
     }
     
     .menu-item {
-      padding: 12px 15px;
+      background: #2e7d32;
       color: white;
-      border-bottom: 1px solid #4a7c59;
+      padding: 14px;
+      margin-bottom: 8px;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 16px;
       cursor: pointer;
-      font-size: 15px;
+      transition: 0.2s;
     }
     
-    .menu-item:hover {
-      background: #4a7c59;
+    .menu-item:last-child {
+      margin-bottom: 0;
+    }
+    
+    .menu-item:active {
+      background: #1b5e20;
+      transform: scale(0.98);
     }
     
     .notice-board {
@@ -273,11 +284,12 @@
       <span></span>
     </div>
     <div class="menu-dropdown" id="menuDropdown">
-      <div class="menu-item">হোম</div>
-      <div class="menu-item">আমাদের সম্পর্কে</div>
-      <div class="menu-item">ভর্তি তথ্য</div>
-      <div class="menu-item">শিক্ষকবৃন্দ</div>
-      <div class="menu-item">যোগাযোগ</div>
+      <div class="menu-item">পাঠ পরামর্শ</div>
+      <div class="menu-item">সিলেবাস</div>
+      <div class="menu-item">রুটিন</div>
+      <div class="menu-item">ফলাফল</div>
+      <div class="menu-item">ভর্তি</div>
+      <div class="menu-item">তথ্য</div>
     </div>
   </div>
 
@@ -326,7 +338,6 @@
       document.getElementById('menuDropdown').classList.toggle('active');
     }
     
-    // বাইরে ক্লিক করলে মেনু বন্ধ হবে
     document.addEventListener('click', function(e) {
       const menu = document.getElementById('menuDropdown');
       const menuIcon = document.querySelector('.menu-icon');
