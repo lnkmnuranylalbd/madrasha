@@ -40,6 +40,7 @@
     }
     
     .title-wrapper {
+      flex: 1;
       display: flex;
       flex-direction: column;
       line-height: 1.3;
@@ -47,17 +48,17 @@
     }
     
     .title-bn {
-      font-size: 16px;
+      font-size: clamp(13px, 4vw, 16px);
       font-weight: 700;
-      white-space: nowrap;
+      word-wrap: break-word;
     }
     
     .title-en {
-      font-size: 12px;
+      font-size: clamp(10px, 3vw, 12px);
       font-weight: 400;
       opacity: 0.9;
       font-family: Arial, sans-serif;
-      white-space: nowrap;
+      word-wrap: break-word;
     }
     
     .menu-bar {
@@ -105,25 +106,31 @@
       padding: 10px 0;
       overflow: hidden;
       border-bottom: 1px solid #ffeeba;
+      cursor: pointer;
     }
     
     .scroll-text {
+      display: flex;
       white-space: nowrap;
-      animation: scroll 15s linear infinite; /* স্পিড বাড়াইছি */
+      animation: scroll 25s linear infinite;
       color: #664d03;
       font-size: 14px;
-      padding-left: 100%;
+    }
+    
+    .scroll-text span {
+      padding-right: 50px;
+      flex-shrink: 0;
     }
     
     @keyframes scroll {
       0% { transform: translateX(0); }
-      100% { transform: translateX(-100%); }
+      100% { transform: translateX(-50%); }
     }
     
     .main-image {
       width: 100%;
-      height: 250px; /* উচ্চতা ফিক্স */
-      object-fit: cover; /* ল্যান্ডস্কেপে পুরা দেখাবে */
+      height: 250px;
+      object-fit: cover;
       display: block;
     }
     
@@ -148,9 +155,63 @@
       margin: 0 auto;
     }
     
+    /* Notice Popup */
+    .notice-popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    
+    .notice-popup.active {
+      display: flex;
+    }
+    
+    .notice-content {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    }
+    
+    .notice-content h3 {
+      color: #2d5016;
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
+    
+    .notice-content p {
+      color: #333;
+      line-height: 1.8;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+    
+    .close-btn {
+      background: #2d5016;
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 5px;
+      font-size: 15px;
+      cursor: pointer;
+      font-family: 'Hind Siliguri', sans-serif;
+    }
+    
+    .close-btn:active {
+      background: #1e3d0f;
+    }
+    
     @media (max-width: 480px) {
-      .title-bn { font-size: 14px; }
-      .title-en { font-size: 11px; }
       .top-banner img { height: 45px; width: 45px; }
       .main-image { height: 200px; }
     }
@@ -183,13 +244,13 @@
     <span class="notice-text">নোটিশ বোর্ড</span>
   </div>
 
-  <div class="scroll-notice">
+  <div class="scroll-notice" onclick="showNotice()">
     <div class="scroll-text">
-      নোটিশ: সম্মানিত অভিভাবকদের জন্য জানানো যাচ্ছে যে, গ্রীষ্মকালীন অবকাশ ও পবিত্র ঈদ-উল-আযহা উপলক্ষে নুরানী বিভাগে আগামী ২৫/০৫/২০২৫ ইং তারিখ থেকে ১৪/০৬/২০২৫ ইং তারিখ পর্যন্ত মাদ্রাসা বন্ধ থাকবে।
+      <span>নোটিশ: সম্মানিত অভিভাবকদের জন্য জানানো যাচ্ছে যে, গ্রীষ্মকালীন অবকাশ ও পবিত্র ঈদ-উল-আযহা উপলক্ষে নুরানী বিভাগে আগামী ২৫/০৫/২০২৫ ইং তারিখ থেকে ১৪/০৬/২০২৫ ইং তারিখ পর্যন্ত মাদ্রাসা বন্ধ থাকবে।</span>
+      <span>নোটিশ: সম্মানিত অভিভাবকদের জন্য জানানো যাচ্ছে যে, গ্রীষ্মকালীন অবকাশ ও পবিত্র ঈদ-উল-আযহা উপলক্ষে নুরানী বিভাগে আগামী ২৫/০৫/২০২৫ ইং তারিখ থেকে ১৪/০৬/২০২৫ ইং তারিখ পর্যন্ত মাদ্রাসা বন্ধ থাকবে।</span>
     </div>
   </div>
 
-  <!-- এখানে banner.jpg করছি -->
   <img class="main-image" src="images/banner.jpg" alt="Madrasa Building">
 
   <div class="about-section">
@@ -198,6 +259,28 @@
       লালমনিরহাটের একটি ঐতিহ্যবাহী কামিল মাদ্রাসা। এখানে নুরানী থেকে কামিল পর্যন্ত বাংলা, ইংরেজি, গণিত, বিজ্ঞান, কুরআন, হাদীস, ফিকহ সহ অন্যান্য বিষয় পড়ানো হয়।
     </p>
   </div>
+
+  <!-- Notice Popup -->
+  <div class="notice-popup" id="noticePopup">
+    <div class="notice-content">
+      <h3>নোটিশ</h3>
+      <p id="fullNoticeText"></p>
+      <button class="close-btn" onclick="closeNotice()">বন্ধ</button>
+    </div>
+  </div>
+
+  <script>
+    const noticeText = "নোটিশ: সম্মানিত অভিভাবকদের জন্য জানানো যাচ্ছে যে, গ্রীষ্মকালীন অবকাশ ও পবিত্র ঈদ-উল-আযহা উপলক্ষে নুরানী বিভাগে আগামী ২৫/০৫/২০২৫ ইং তারিখ থেকে ১৪/০৬/২০২৫ ইং তারিখ পর্যন্ত মাদ্রাসা বন্ধ থাকবে।";
+    
+    function showNotice() {
+      document.getElementById('fullNoticeText').textContent = noticeText;
+      document.getElementById('noticePopup').classList.add('active');
+    }
+    
+    function closeNotice() {
+      document.getElementById('noticePopup').classList.remove('active');
+    }
+  </script>
 
 </body>
 </html>
