@@ -90,7 +90,6 @@
       border-radius: 2px;
     }
     
-    /* Side Drawer Menu - GitHub Style */
     .side-menu {
       position: fixed;
       top: 0;
@@ -148,11 +147,11 @@
       background: #f6f8fa;
     }
     
-    .menu-item:active {
-      background: #e9ecef;
+    .menu-item.disabled {
+      color: #999;
+      cursor: default;
     }
     
-    /* Overlay */
     .menu-overlay {
       display: none;
       position: fixed;
@@ -321,7 +320,6 @@
     </div>
   </div>
 
-  <!-- Side Menu - GitHub Style -->
   <div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
   <div class="side-menu" id="sideMenu">
     <div class="menu-header">
@@ -329,12 +327,12 @@
       <span class="close-menu" onclick="closeMenu()">×</span>
     </div>
     <div class="menu-content">
-      <a href="path-poramorsho.html" class="menu-item">পাঠ পরামর্শ</a>
+      <a href="advice.html" class="menu-item">পাঠ পরামর্শ</a>
       <a href="syllabus.html" class="menu-item">সিলেবাস</a>
       <a href="routine.html" class="menu-item">রুটিন</a>
-      <a href="result.html" class="menu-item">ফলাফল</a>
-      <a href="admission.html" class="menu-item">ভর্তি</a>
-      <a href="info.html" class="menu-item">তথ্য</a>
+      <a href="exam.html" class="menu-item">ফলাফল</a>
+      <a href="#" class="menu-item disabled">ভর্তি</a>
+      <a href="#" class="menu-item disabled">তথ্য</a>
     </div>
   </div>
 
@@ -389,9 +387,14 @@
       document.getElementById('menuOverlay').classList.remove('active');
     }
     
-    // মেনু আইটেমে ক্লিক করলে মেনু বন্ধ হবে
     document.querySelectorAll('.menu-item').forEach(item => {
-      item.addEventListener('click', closeMenu);
+      item.addEventListener('click', function(e) {
+        if(this.classList.contains('disabled')) {
+          e.preventDefault();
+          return false;
+        }
+        closeMenu();
+      });
     });
   </script>
 
