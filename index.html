@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>লালমনিরহাট নেছারিয়া কামিল মাদ্রাসা নুরানী শাখা</title>
   
-  <!-- Google Font - Bengali -->
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
   
   <style>
@@ -20,7 +19,6 @@
       background: #f5f5f5;
     }
     
-    /* Top Banner */
     .top-banner {
       background: linear-gradient(135deg, #2d5016, #4a7c59);
       color: white;
@@ -45,14 +43,13 @@
       display: flex;
       flex-direction: column;
       line-height: 1.3;
+      overflow: hidden;
     }
     
     .title-bn {
       font-size: 16px;
       font-weight: 700;
       white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
     }
     
     .title-en {
@@ -60,9 +57,9 @@
       font-weight: 400;
       opacity: 0.9;
       font-family: Arial, sans-serif;
+      white-space: nowrap;
     }
     
-    /* Menu Bar */
     .menu-bar {
       background: #1e3d0f;
       padding: 12px 15px;
@@ -83,7 +80,6 @@
       border-radius: 2px;
     }
     
-    /* Notice Board */
     .notice-board {
       background: #fff3cd;
       padding: 12px 15px;
@@ -104,7 +100,6 @@
       font-size: 15px;
     }
     
-    /* Scrolling Notice */
     .scroll-notice {
       background: #fff9e6;
       padding: 10px 0;
@@ -114,7 +109,7 @@
     
     .scroll-text {
       white-space: nowrap;
-      animation: scroll 20s linear infinite;
+      animation: scroll 15s linear infinite; /* স্পিড বাড়াইছি */
       color: #664d03;
       font-size: 14px;
       padding-left: 100%;
@@ -125,14 +120,13 @@
       100% { transform: translateX(-100%); }
     }
     
-    /* Main Image */
     .main-image {
       width: 100%;
-      height: auto;
+      height: 250px; /* উচ্চতা ফিক্স */
+      object-fit: cover; /* ল্যান্ডস্কেপে পুরা দেখাবে */
       display: block;
     }
     
-    /* About Section */
     .about-section {
       padding: 25px 15px;
       text-align: center;
@@ -154,17 +148,20 @@
       margin: 0 auto;
     }
     
-    /* Mobile Responsive */
     @media (max-width: 480px) {
       .title-bn { font-size: 14px; }
       .title-en { font-size: 11px; }
       .top-banner img { height: 45px; width: 45px; }
+      .main-image { height: 200px; }
+    }
+    
+    @media (orientation: landscape) {
+      .main-image { height: 300px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Banner -->
   <div class="top-banner">
     <img src="images/logo.png" alt="Logo">
     <div class="title-wrapper">
@@ -173,7 +170,6 @@
     </div>
   </div>
 
-  <!-- Menu Bar -->
   <div class="menu-bar">
     <div class="menu-icon">
       <span></span>
@@ -182,23 +178,20 @@
     </div>
   </div>
 
-  <!-- Notice Board -->
   <div class="notice-board">
     <span class="notice-icon">📢</span>
     <span class="notice-text">নোটিশ বোর্ড</span>
   </div>
 
-  <!-- Scrolling Notice -->
   <div class="scroll-notice">
     <div class="scroll-text">
       নোটিশ: সম্মানিত অভিভাবকদের জন্য জানানো যাচ্ছে যে, গ্রীষ্মকালীন অবকাশ ও পবিত্র ঈদ-উল-আযহা উপলক্ষে নুরানী বিভাগে আগামী ২৫/০৫/২০২৫ ইং তারিখ থেকে ১৪/০৬/২০২৫ ইং তারিখ পর্যন্ত মাদ্রাসা বন্ধ থাকবে।
     </div>
   </div>
 
-  <!-- Main Image -->
-  <img class="main-image" src="images/madrasa.jpg" alt="Madrasa Building">
+  <!-- এখানে banner.jpg করছি -->
+  <img class="main-image" src="images/banner.jpg" alt="Madrasa Building">
 
-  <!-- About Section -->
   <div class="about-section">
     <h2 class="about-title">আমাদের পরিচিতি</h2>
     <p class="about-text">
