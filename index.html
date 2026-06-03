@@ -1,289 +1,210 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>লালমনিরহাট নেছারিয়া কামিল মাদ্রাসা নুরানী শাখা</title>
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@600;700&display=swap" rel="stylesheet">
-<style>
-body {font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f0f8ff;}
-
-/* টপ ব্যানার - লোগো + নাম ১ লাইন */
-.top-banner {
-    background: linear-gradient(90deg, #2e7d32, #4caf50);
-    color: white;
-    padding: 12px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    gap: 12px;
-}
-.top-banner img {
-    height: 45px;
-    width: 45px;
-    border-radius: 50%;
-    background: white;
-    padding: 3px;
-    flex-shrink: 0;
-}
-.top-banner h1 {
-    font-family: 'Hind Siliguri', sans-serif;
-    font-size: 4.2vw; /* স্ক্রিন অনুযায়ী অটো ছোট-বড় হবে */
-    font-weight: 700;
-    margin: 0;
-    white-space: nowrap; /* ১ লাইনে থাকবে */
-    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
-}
-
-/* মেনু বার */
-.menu-bar {
-    background: #1b5e20;
-    padding: 12px 15px;
-    display: flex;
-    align-items: center;
-}
-.menu-btn {
-    font-size: 28px;
-    background: none;
-    border: none;
-    color: #ffcc80;
-    cursor: pointer;
-}
-
-.sidemenu {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #fff;
-    overflow-x: hidden;
-    transition: 0.3s;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.3);
-    z-index: 1000;
-}
-.sidemenu a {
-    padding: 15px 20px;
-    text-decoration: none;
-    font-size: 17px;
-    color: #333;
-    display: block;
-    border-bottom: 1px solid #eee;
-}
-.sidemenu .closebtn {
-    font-size: 30px;
-    text-align: right;
-    padding: 10px 20px;
-    border-bottom: none;
-}
-
-/* নোটিশ হেডিং */
-.notice-heading {
-    background: #1b5e20;
-    color: white;
-    padding: 10px 15px;
-    font-size: 16px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-/* নোটিশ টিকার */
-.notice-wrapper {
-    background: #fff3cd;
-    border-bottom: 1px solid #ffeeba;
-    overflow: hidden;
-    position: relative;
-    height: 45px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-}
-.notice-dot {
-    width: 12px;
-    height: 12px;
-    background: red;
-    border-radius: 50%;
-    margin-left: 15px;
-    margin-right: 10px;
-    flex-shrink: 0;
-}
-.notice-track {
-    display: flex;
-    animation: scroll-left 18s linear infinite;
-}
-.notice {
-    flex-shrink: 0;
-    padding: 12px 30px;
-    color: #5c3d00;
-    font-size: 15px;
-    white-space: nowrap;
-}
-@keyframes scroll-left {
-    from {transform: translateX(0);}
-    to {transform: translateX(-50%);}
-}
-
-/* নোটিশ পপআপ */
-.notice-popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
-    z-index: 2000;
-    padding: 20px;
-    box-sizing: border-box;
-    overflow-y: auto;
-}
-.notice-content {
-    background: #fff;
-    padding: 0;
-    border-radius: 8px;
-    max-width: 600px;
-    margin: 50px auto;
-    overflow: hidden;
-}
-.notice-header {
-    background: #1b5e20;
-    color: white;
-    padding: 15px 20px;
-    font-size: 16px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-}
-.notice-header::before {
-    content: "📢";
-    margin-right: 8px;
-}
-.notice-body {
-    padding: 20px;
-    color: #333;
-    line-height: 1.7;
-    font-size: 15px;
-}
-.close-popup {
-    float: right;
-    font-size: 28px;
-    cursor: pointer;
-    line-height: 1;
-}
-
-/* ব্যানার - ফুল চওড়া */
-.banner {
-    padding: 0;
-}
-.banner img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.intro {
-    padding: 20px;
-    text-align: center;
-}
-.intro h2 {
-    color: #2c5aa0;
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-.intro p {
-    font-size: 15px;
-    line-height: 1.6;
-    color: #333;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>লালমনিরহাট নেছারিয়া কামিল মাদ্রাসা নুরানী শাখা</title>
+  
+  <!-- Google Font - Bengali -->
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Hind Siliguri', sans-serif;
+      background: #f5f5f5;
+    }
+    
+    /* Top Banner */
+    .top-banner {
+      background: linear-gradient(135deg, #2d5016, #4a7c59);
+      color: white;
+      padding: 12px 15px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    
+    .top-banner img {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      background: white;
+      padding: 3px;
+      flex-shrink: 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    .title-wrapper {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.3;
+    }
+    
+    .title-bn {
+      font-size: 16px;
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    .title-en {
+      font-size: 12px;
+      font-weight: 400;
+      opacity: 0.9;
+      font-family: Arial, sans-serif;
+    }
+    
+    /* Menu Bar */
+    .menu-bar {
+      background: #1e3d0f;
+      padding: 12px 15px;
+    }
+    
+    .menu-icon {
+      width: 28px;
+      height: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+    
+    .menu-icon span {
+      height: 3px;
+      background: white;
+      border-radius: 2px;
+    }
+    
+    /* Notice Board */
+    .notice-board {
+      background: #fff3cd;
+      padding: 12px 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 2px solid #ffeeba;
+    }
+    
+    .notice-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    
+    .notice-text {
+      color: #856404;
+      font-weight: 600;
+      font-size: 15px;
+    }
+    
+    /* Scrolling Notice */
+    .scroll-notice {
+      background: #fff9e6;
+      padding: 10px 0;
+      overflow: hidden;
+      border-bottom: 1px solid #ffeeba;
+    }
+    
+    .scroll-text {
+      white-space: nowrap;
+      animation: scroll 20s linear infinite;
+      color: #664d03;
+      font-size: 14px;
+      padding-left: 100%;
+    }
+    
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+    
+    /* Main Image */
+    .main-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    /* About Section */
+    .about-section {
+      padding: 25px 15px;
+      text-align: center;
+      background: white;
+    }
+    
+    .about-title {
+      color: #2d5016;
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    
+    .about-text {
+      color: #333;
+      font-size: 15px;
+      line-height: 1.8;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 480px) {
+      .title-bn { font-size: 14px; }
+      .title-en { font-size: 11px; }
+      .top-banner img { height: 45px; width: 45px; }
+    }
+  </style>
 </head>
 <body>
 
-<!-- টপ ব্যানার -->
-<div class="top-banner">
-    <!-- লোগোর জায়গা - তুমি logo.png আপলোড করলে এটা দেখাবে -->
-    <img src="./images/logo.png" alt="লোগো" onerror="this.style.display='none'">
-    <h1>লালমনিরহাট নেছারিয়া কামিল মাদ্রাসা নুরানী শাখা</h1>
-</div>
-
-<!-- মেনু বার -->
-<div class="menu-bar">
-    <button class="menu-btn" onclick="openMenu()">☰</button>
-</div>
-
-<!-- নোটিশ হেডিং -->
-<div class="notice-heading">
-    📢 নোটিশ বোর্ড
-</div>
-
-<!-- নোটিশ টিকার -->
-<div class="notice-wrapper" onclick="showNotice()">
-    <div class="notice-dot"></div>
-    <div class="notice-track">
-        <div class="notice">
-            নোটিশ: সম্মানিত অভিভাবকবৃন্দের অবগতির জন্য জানানো যাচ্ছে যে, গ্রীষ্মকালীন অবকাশ ও পবিত্র ঈদ-উল-আযহা উপলক্ষে নুরাণী বিভাগে আগামী ২৫/০৫/২০২৬ইং তারিখ রোজ সোমবার হতে ০৭/০৬/২০২৬ইং তারিখ রোজ রবিবার পর্যন্ত মোট ১৪দিন মাদ্রাসা বন্ধ থাকবে।
-        </div>
-        <div class="notice">
-            নোটিশ: সম্মানিত অভিভাবকবৃন্দের অবগতির জন্য জানানো যাচ্ছে যে, গ্রীষ্মকালীন অবকাশ ও পবিত্র ঈদ-উল-আযহা উপলক্ষে নুরাণী বিভাগে আগামী ২৫/০৫/২০২৬ইং তারিখ রোজ সোমবার হতে ০৭/০৬/২০২৬ইং তারিখ রোজ রবিবার পর্যন্ত মোট ১৪দিন মাদ্রাসা বন্ধ থাকবে।
-        </div>
+  <!-- Top Banner -->
+  <div class="top-banner">
+    <img src="images/logo.png" alt="Logo">
+    <div class="title-wrapper">
+      <div class="title-bn">লালমনিরহাট নেছারিয়া কামিল মাদ্রাসা নুরানী শাখা</div>
+      <div class="title-en">Lalmonirhat Nesaria Kamil Madrasa Nurani Branch</div>
     </div>
-</div>
+  </div>
 
-<!-- নোটিশ পপআপ -->
-<div class="notice-popup" id="noticePopup" onclick="hideNotice()">
-    <div class="notice-content" onclick="event.stopPropagation()">
-        <div class="notice-header">
-            <span style="flex:1;">নোটিশ - গ্রীষ্মকালীন অবকাশ ও ঈদ-উল-আযহার ছুটি</span>
-            <span class="close-popup" onclick="hideNotice()">×</span>
-        </div>
-        <div class="notice-body">
-            সম্মানিত অভিভাবকবৃন্দের অবগতির জন্য জানানো যাচ্ছে যে, গ্রীষ্মকালীন অবকাশ ও পবিত্র ঈদ-উল-আযহা উপলক্ষে নুরাণী বিভাগে আগামী ২৫/০৫/২০২৬ইং তারিখ রোজ সোমবার হতে ০৭/০৬/২০২৬ইং তারিখ রোজ রবিবার পর্যন্ত মোট ১৪দিন মাদ্রাসা বন্ধ থাকবে।<br><br>
-            আদেশক্রমে,<br>
-            অধ্যক্ষ (ভারপ্রাপ্ত)<br>
-            মাওলানা মো: রফিকুল ইসলাম
-        </div>
+  <!-- Menu Bar -->
+  <div class="menu-bar">
+    <div class="menu-icon">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-</div>
+  </div>
 
-<!-- ব্যানার -->
-<div class="banner">
-    <img src="./images/banner.jpg" alt="মাদ্রাসা ব্যানার">
-</div>
+  <!-- Notice Board -->
+  <div class="notice-board">
+    <span class="notice-icon">📢</span>
+    <span class="notice-text">নোটিশ বোর্ড</span>
+  </div>
 
-<div class="intro">
-    <h2>আমাদের পরিচিতি</h2>
-    <p>লালমনিরহাটের একটি ঐতিহ্যবাহী কামিল মাদ্রাসা। এখানে নুরানী থেকে কামিল পর্যন্ত বাংলা, ইংরেজি, গণিত, বিজ্ঞান, কুরআন, হাদীস, ফিকহ সহ অন্যান্য বিষয় পড়ানো হয়।</p>
-</div>
+  <!-- Scrolling Notice -->
+  <div class="scroll-notice">
+    <div class="scroll-text">
+      নোটিশ: সম্মানিত অভিভাবকদের জন্য জানানো যাচ্ছে যে, গ্রীষ্মকালীন অবকাশ ও পবিত্র ঈদ-উল-আযহা উপলক্ষে নুরানী বিভাগে আগামী ২৫/০৫/২০২৫ ইং তারিখ থেকে ১৪/০৬/২০২৫ ইং তারিখ পর্যন্ত মাদ্রাসা বন্ধ থাকবে।
+    </div>
+  </div>
 
-<div id="mySidemenu" class="sidemenu">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">×</a>
-    <a href="advice.html">📖 পাঠ পরামর্শ</a>
-    <a href="syllabus.html">📚 সিলেবাস</a>
-    <a href="routine.html">📅 রুটিন</a>
-    <a href="exam.html">📝 ফলাফল</a>
-    <a href="admission.html">🎓 ভর্তি</a>
-    <a href="info.html">ℹ️ তথ্য</a>
-</div>
+  <!-- Main Image -->
+  <img class="main-image" src="images/madrasa.jpg" alt="Madrasa Building">
 
-<script>
-function openMenu() {
-    document.getElementById("mySidemenu").style.width = "250px";
-}
-function closeMenu() {
-    document.getElementById("mySidemenu").style.width = "0";
-}
-function showNotice() {
-    document.getElementById("noticePopup").style.display = "block";
-}
-function hideNotice() {
-    document.getElementById("noticePopup").style.display = "none";
-}
-</script>
+  <!-- About Section -->
+  <div class="about-section">
+    <h2 class="about-title">আমাদের পরিচিতি</h2>
+    <p class="about-text">
+      লালমনিরহাটের একটি ঐতিহ্যবাহী কামিল মাদ্রাসা। এখানে নুরানী থেকে কামিল পর্যন্ত বাংলা, ইংরেজি, গণিত, বিজ্ঞান, কুরআন, হাদীস, ফিকহ সহ অন্যান্য বিষয় পড়ানো হয়।
+    </p>
+  </div>
 
 </body>
 </html>
