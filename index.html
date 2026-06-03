@@ -98,7 +98,7 @@
       width: 85%;
       max-width: 320px;
       height: 100%;
-      background: #e3f2fd;
+      background: #ffffff;
       z-index: 1001;
       transition: left 0.3s ease;
       overflow-y: auto;
@@ -130,25 +130,26 @@
     }
     
     .menu-content {
-      padding: 15px;
+      padding: 0;
     }
     
     .menu-item {
-      background: #2e7d32;
-      color: white;
-      padding: 16px;
-      margin-bottom: 10px;
-      border-radius: 8px;
-      text-align: center;
-      font-weight: 600;
-      font-size: 16px;
-      cursor: pointer;
-      transition: 0.2s;
+      display: block;
+      color: #24292f;
+      padding: 14px 20px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      border-bottom: 1px solid #d0d7de;
+      transition: background 0.15s;
+    }
+    
+    .menu-item:hover {
+      background: #f6f8fa;
     }
     
     .menu-item:active {
-      background: #1b5e20;
-      transform: scale(0.98);
+      background: #e9ecef;
     }
     
     /* Overlay */
@@ -328,12 +329,12 @@
       <span class="close-menu" onclick="closeMenu()">×</span>
     </div>
     <div class="menu-content">
-      <div class="menu-item">পাঠ পরামর্শ</div>
-      <div class="menu-item">সিলেবাস</div>
-      <div class="menu-item">রুটিন</div>
-      <div class="menu-item">ফলাফল</div>
-      <div class="menu-item">ভর্তি</div>
-      <div class="menu-item">তথ্য</div>
+      <a href="path-poramorsho.html" class="menu-item">পাঠ পরামর্শ</a>
+      <a href="syllabus.html" class="menu-item">সিলেবাস</a>
+      <a href="routine.html" class="menu-item">রুটিন</a>
+      <a href="result.html" class="menu-item">ফলাফল</a>
+      <a href="admission.html" class="menu-item">ভর্তি</a>
+      <a href="info.html" class="menu-item">তথ্য</a>
     </div>
   </div>
 
@@ -387,6 +388,11 @@
       document.getElementById('sideMenu').classList.remove('active');
       document.getElementById('menuOverlay').classList.remove('active');
     }
+    
+    // মেনু আইটেমে ক্লিক করলে মেনু বন্ধ হবে
+    document.querySelectorAll('.menu-item').forEach(item => {
+      item.addEventListener('click', closeMenu);
+    });
   </script>
 
 </body>
