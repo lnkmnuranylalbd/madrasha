@@ -260,24 +260,26 @@
     
     .notice-content {
       background: white;
-      padding: 25px;
+      padding: 15px;
       border-radius: 10px;
-      max-width: 500px;
+      max-width: 600px;
       width: 100%;
+      height: 80vh;
       box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
     }
     
     .notice-content h3 {
       color: #2d5016;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
       font-size: 20px;
     }
     
-    .notice-content p {
-      color: #333;
-      line-height: 1.8;
-      font-size: 15px;
-      margin-bottom: 20px;
+    .notice-pdf {
+      flex: 1;
+      border: none;
+      width: 100%;
     }
     
     .close-btn {
@@ -289,6 +291,8 @@
       font-size: 15px;
       cursor: pointer;
       font-family: 'Hind Siliguri', sans-serif;
+      margin-top: 10px;
+      align-self: flex-start;
     }
     
     @media (max-width: 480px) {
@@ -342,8 +346,8 @@
 
   <div class="scroll-notice" onclick="showNotice()">
     <div class="scroll-text">
-      <span>নোটিশ: সম্মানিত অভিভাবকবৃন্দের অবগতির জন্য জানানো যাচ্ছে যে, গ্রীষ্মকালীন অবকাশ ও পবিত্র ঈদ-উল- আযহা উপলক্ষে নুরাণী বিভাগে আগামী ২৫/০৫/২০২৬ইং তারিখ রোজ সোমবার হতে ০৭/০৬/২০২৬ইং তারিখ রোজ রবিবার পর্যন্ত মোট ১৪দিন মাদ্রাসা বন্ধ থাকবে। উল্লেখ্য যে, আগামী ০৮/০৬/২০২৬ইং তারিখ রোজ সোমবার সকাল ৮:৩০ ঘটিকা সময় থেকে পাঠদান কার্যক্রম পুনরায় শুরু হবে ইনশাআল্লাহ। আদেশক্রমে, অধ্যক্ষ (ভারপ্রাপ্ত) মাওলানা মো:রফিকুল ইসলাম, লালমনিরহাট নেছারিয়া কামিল মাদ্রাসা।</span>
-      <span>নোটিশ: সম্মানিত অভিভাবকবৃন্দের অবগতির জন্য জানানো যাচ্ছে যে, গ্রীষ্মকালীন অবকাশ ও পবিত্র ঈদ-উল- আযহা উপলক্ষে নুরাণী বিভাগে আগামী ২৫/০৫/২০২৬ইং তারিখ রোজ সোমবার হতে ০৭/০৬/২০২৬ইং তারিখ রোজ রবিবার পর্যন্ত মোট ১৪দিন মাদ্রাসা বন্ধ থাকবে। উল্লেখ্য যে, আগামী ০৮/০৬/২০২৬ইং তারিখ রোজ সোমবার সকাল ৮:৩০ ঘটিকা সময় থেকে পাঠদান কার্যক্রম পুনরায় শুরু হবে ইনশাআল্লাহ। আদেশক্রমে, অধ্যক্ষ (ভারপ্রাপ্ত) মাওলানা মো:রফিকুল ইসলাম, লালমনিরহাট নেছারিয়া কামিল মাদ্রাসা।</span>
+      <span>নোটিশ দেখতে ক্লিক করুন</span>
+      <span>নোটিশ দেখতে ক্লিক করুন</span>
     </div>
   </div>
 
@@ -359,28 +363,20 @@
   <div class="notice-popup" id="noticePopup">
     <div class="notice-content">
       <h3>নোটিশ</h3>
-      <p id="fullNoticeText"></p>
+      <iframe class="notice-pdf" id="noticeFrame" src=""></iframe>
       <button class="close-btn" onclick="closeNotice()">বন্ধ</button>
     </div>
   </div>
 
   <script>
-    const noticeText = `নোটিশ
-সম্মানিত অভিভাবকবৃন্দের অবগতির জন্য জানানো যাচ্ছে যে, গ্রীষ্মকালীন অবকাশ ও পবিত্র ঈদ-উল- আযহা উপলক্ষে নুরাণী বিভাগে আগামী ২৫/০৫/২০২৬ইং তারিখ রোজ সোমবার হতে ০৭/০৬/২০২৬ইং তারিখ রোজ রবিবার পর্যন্ত মোট ১৪দিন মাদ্রাসা বন্ধ থাকবে।
-
-উল্লেখ্য যে, আগামী ০৮/০৬/২০২৬ইং তারিখ রোজ সোমবার সকাল ৮:৩০ ঘটিকা সময় থেকে পাঠদান কার্যক্রম পুনরায় শুরু হবে ইনশাআল্লাহ।
-
-আদেশক্রমে,
-অধ্যক্ষ (ভারপ্রাপ্ত) 
-মাওলানা মো:রফিকুল ইসলাম 
-লালমনিরহাট নেছারিয়া কামিল মাদ্রাসা।`;
     function showNotice() {
-      document.getElementById('fullNoticeText').textContent = noticeText;
+      document.getElementById('noticeFrame').src = 'notice.pdf';
       document.getElementById('noticePopup').classList.add('active');
     }
     
     function closeNotice() {
       document.getElementById('noticePopup').classList.remove('active');
+      document.getElementById('noticeFrame').src = '';
     }
     
     function openMenu() {
